@@ -901,11 +901,13 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 30% 25%, rgba(211, 163, 118, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 70% 75%, rgba(140, 110, 99, 0.25) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(255, 242, 223, 0.38) 0%, transparent 55%),
-        radial-gradient(circle at 20% 80%, rgba(62, 37, 34, 0.12) 0%, transparent 48%),
-        radial-gradient(circle at 80% 20%, rgba(211, 163, 118, 0.22) 0%, transparent 52%);
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 70% 75%, rgba(255, 255, 255, 0.45) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 55%),
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.35) 0%, transparent 48%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 52%),
+        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.3) 0%, transparent 45%),
+        radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.35) 0%, transparent 50%);
     pointer-events: none;
     filter: blur(72px);
 }
