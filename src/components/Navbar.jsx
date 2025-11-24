@@ -1,36 +1,39 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+const navLinks = [
+  { href: '#home', icon: '🏠', label: 'Home' },
+  { href: '#work', icon: '🗂️', label: 'Work' },
+  { href: '#projects', icon: '🎨', label: 'Projects' },
+  { href: '#spotlight', icon: '🌟', label: 'Spotlight' },
+  { href: '#tools', icon: '🧰', label: 'Tools' },
+  { href: '#testimonials', icon: '💬', label: 'Notes' }
+]
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
-
   return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="nav-brand">
-          <a href="#home" onClick={closeMenu}>Fathima Rahmi</a>
+    <aside className="side-nav">
+      <div className="side-nav__inner">
+        <div className="avatar" aria-hidden="true">
+          <span role="img" aria-label="avatar">
+            🙂
+          </span>
         </div>
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="#about" onClick={closeMenu}>About</a></li>
-          <li><a href="#work" onClick={closeMenu}>Work</a></li>
-          <li><a href="#services" onClick={closeMenu}>Services</a></li>
-          <li><a href="#faq" onClick={closeMenu}>FAQ</a></li>
-          <li><a href="#contact" className="btn-waitlist" onClick={closeMenu}>Contact</a></li>
-        </ul>
-        <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <nav aria-label="Primary">
+          <ul>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} aria-label={link.label}>
+                  <span aria-hidden="true">{link.icon}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <a className="side-nav__social" href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Social">
+          ♫
+        </a>
       </div>
-    </nav>
+    </aside>
   )
 }
 

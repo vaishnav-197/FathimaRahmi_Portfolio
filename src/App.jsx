@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
-import Testimonials from './components/Testimonials'
-import Portfolio from './components/Portfolio'
-import Awards from './components/Awards'
-import Pricing from './components/Pricing'
-import FAQ from './components/FAQ'
-import Contact from './components/Contact'
+import WorkSection from './components/WorkSection'
+import SideProjects from './components/SideProjects'
+import Spotlight from './components/Spotlight'
+import ToolStack from './components/ToolStack'
+import SocialProof from './components/SocialProof'
+import Newsletter from './components/Newsletter'
+import FooterCTA from './components/FooterCTA'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
-import { useScrollAnimations } from './hooks/useScrollAnimations'
-import { useNavbarScroll } from './hooks/useNavbarScroll'
-import { useSmoothScroll } from './hooks/useSmoothScroll'
-import { useScrollProgress } from './hooks/useScrollProgress'
-import { useParallax } from './hooks/useParallax'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -26,30 +21,38 @@ function App() {
   return (
     <div className="app">
       {isLoading && <Loader onComplete={handleLoaderComplete} />}
-      {!isLoading && <MainContent />}
+      <div className={`app-content ${!isLoading ? 'app-content--visible' : ''}`}>
+        {!isLoading && <MainContent />}
+      </div>
     </div>
   )
 }
 
 function MainContent() {
-  useScrollAnimations()
-  useNavbarScroll()
-  useSmoothScroll()
-  useScrollProgress()
-  useParallax()
-
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Testimonials />
-      <Portfolio />
-      <Awards />
-      <Pricing />
-      <FAQ />
-      <Contact />
-      <Footer />
+      <div className="page-shell">
+        <main className="page-column">
+          <Hero />
+          <WorkSection />
+          <SideProjects />
+          <Spotlight />
+          <ToolStack />
+          <SocialProof />
+          <Newsletter />
+          <FooterCTA />
+          <Footer />
+        </main>
+        <div className="page-rail">
+          <a href="#contact" className="floating-cta">
+            <span role="img" aria-hidden="true">
+              ✌️
+            </span>
+            Say hi
+          </a>
+        </div>
+      </div>
     </>
   )
 }

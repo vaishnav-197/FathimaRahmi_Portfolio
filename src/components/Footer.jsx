@@ -2,17 +2,14 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-brand">Fathima Rahmi</div>
-          <div className="footer-links">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#services">Services</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-          </div>
+    <footer className="site-footer">
+      <div className="container footer-inner">
+        <p>© {new Date().getFullYear()} Digital Marketing by Fathima Rahmi.</p>
+        <div className="footer-links">
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#spotlight">Spotlight</a>
+          <a href="#newsletter">Newsletter</a>
         </div>
       </div>
     </footer>

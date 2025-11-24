@@ -74,7 +74,11 @@ const Loader = ({ onComplete }) => {
           animationData={animationData}
           loop={true}
           autoplay={true}
-          style={{ width: 200, height: 200 }}
+          style={{
+            width: 200,
+            height: 200,
+            filter: 'brightness(0) saturate(100%) invert(1)'
+          }}
         />
       </div>
     </div>
