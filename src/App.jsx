@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import WorkSection from './components/WorkSection'
@@ -29,10 +29,21 @@ function App() {
 }
 
 function MainContent() {
+  useEffect(() => {
+    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches
+    if (isMobile) return
+
+    // Scroll to home section on component mount
+    const homeSection = document.getElementById('home')
+    if (homeSection) {
+      homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [])
+
   return (
     <>
-      <Navbar />
       <div className="page-shell">
+        <Navbar />
         <main className="page-column">
           <Hero />
           <WorkSection />

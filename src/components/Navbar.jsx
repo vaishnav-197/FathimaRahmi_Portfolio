@@ -13,11 +13,6 @@ const Navbar = () => {
   return (
     <aside className="side-nav">
       <div className="side-nav__inner">
-        <div className="avatar" aria-hidden="true">
-          <span role="img" aria-label="avatar">
-            🙂
-          </span>
-        </div>
         <nav aria-label="Primary">
           <ul>
             {navLinks.map((link) => (
