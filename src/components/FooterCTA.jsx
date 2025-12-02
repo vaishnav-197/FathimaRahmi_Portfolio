@@ -10,10 +10,15 @@ const FooterCTA = () => {
         <p>Ready to partner on campaigns that are simple, measurable, and powerful enough to scale.</p>
         </div>
         <div className="footer-cta-actions">
-          <a className="btn primary" href="mailto:fathimarahmi66@gmail.com">
+          <a className="btn primary" href="mailto:rahmimanama22@gmail.com">
             Email me
           </a>
-          <a className="btn ghost" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+          <a
+            className="btn ghost"
+            href="https://www.linkedin.com/in/fathima-rahmi-a859a7212"
+            target="_blank"
+            rel="noreferrer"
+          >
             LinkedIn profile
           </a>
         </div>

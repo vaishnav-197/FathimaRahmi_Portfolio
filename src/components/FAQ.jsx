@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: 'How can I get started?',
-    answer: 'Feel free to reach out via email at fathimarahmi66@gmail.com. We can discuss your goals, current online presence, and how I can help you achieve measurable results through digital marketing.'
+    answer: 'Feel free to reach out via email at rahmimanama22@gmail.com. We can discuss your goals, current online presence, and how I can help you achieve measurable results through digital marketing.'
   }
 ]
 

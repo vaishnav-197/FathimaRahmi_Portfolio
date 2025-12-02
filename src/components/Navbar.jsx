@@ -24,8 +24,14 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
-        <a className="side-nav__social" href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Social">
-          ♫
+        <a
+          className="side-nav__social"
+          href="https://www.linkedin.com/in/fathima-rahmi-a859a7212"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+        >
+          in
         </a>
       </div>
     </aside>

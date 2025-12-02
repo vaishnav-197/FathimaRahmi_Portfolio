@@ -14,7 +14,7 @@ const testimonials = [
   {
     quote: 'Let’s grow your business in the UAE with clean, measurable marketing.',
     author: 'Contact',
-    role: 'Email: fathimarahmi66@gmail.com · LinkedIn: add your link'
+    role: 'Email: rahmimanama22@gmail.com · LinkedIn: linkedin.com/in/fathima-rahmi-a859a7212'
   }
 ]
 
