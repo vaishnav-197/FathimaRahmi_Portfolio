@@ -1,8 +1,31 @@
 {
-  "hash": "727d8ec6",
+  "hash": "a4f65513",
   "configHash": "b790202a",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "e8d90395",
-  "optimized": {},
-  "chunks": {}
+  "lockfileHash": "d4ba21ca",
+  "browserHash": "dbaa6682",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "31629d26",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "e4f3bd3f",
+      "needsInterop": true
+    },
+    "lottie-react": {
+      "src": "../../node_modules/lottie-react/build/index.es.js",
+      "file": "lottie-react.js",
+      "fileHash": "f904fe22",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-UTEJFLXC": {
+      "file": "chunk-UTEJFLXC.js"
+    }
+  }
 }

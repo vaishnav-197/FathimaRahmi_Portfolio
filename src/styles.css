@@ -433,6 +433,9 @@ img {
 .project-card__media {
   height: 160px;
   background: linear-gradient(135deg, rgba(224, 224, 224, 0.15), rgba(53, 58, 62, 0.4));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .project-card__content {

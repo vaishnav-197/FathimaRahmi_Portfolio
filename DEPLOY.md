@@ -1,48 +1,76 @@
 # GitHub Pages Deployment Guide
 
-## Setup Complete! ✅
+The project is configured to deploy to GitHub Pages with a custom domain.
 
-Your project is now configured for GitHub Pages deployment.
+## Deploy Workflow
 
-## How to Deploy
-
-1. **Build and deploy:**
+1. **Build and publish**
    ```bash
    npm run deploy
    ```
+   This bundles the site with Vite and publishes `dist/` to the `gh-pages` branch via `gh-pages`.
 
-   This will:
-   - Build your React app
-   - Deploy it to the `gh-pages` branch
-   - Make it available at: `https://vaishnav-197.github.io/FathimaRahmi_Portfolio/`
+2. **GitHub Pages settings**
+   - Repository → Settings → Pages
+   - Source: `gh-pages` branch
+   - Custom domain: `fathimarahmi.com`
+   - Enable “Enforce HTTPS” once DNS is active
 
-2. **Enable GitHub Pages in your repository:**
-   - Go to your GitHub repository settings
-   - Navigate to "Pages" section
-   - Select source: "gh-pages" branch
-   - Save
+3. **Live URL**
+   - Primary: `https://fathimarahmi.com`
+   - Optional alias (if configured): `https://www.fathimarahmi.com`
 
-## Important Notes
+## Custom Domain Checklist
 
-- The base path is set to `/FathimaRahmi_Portfolio/` in `vite.config.js`
-- All assets will be served from this base path
-- The `gh-pages` branch will be created automatically on first deploy
-- You can update the site by running `npm run deploy` again
+1. **CNAME file**
+   - `public/CNAME` must contain the desired hostname.
+   - Example:
+     ```
+     fathimarahmi.com
+     ```
+     Replace with a different hostname if you ever want to point the site elsewhere.
+
+2. **DNS records**
+   Add these in your domain registrar’s DNS dashboard (replace values if using another GitHub account or hostname):
+
+   | Type | Host/Name | Value/Target             | TTL  | Purpose                         |
+   | ---- | --------- | ------------------------ | ---- | -------------------------------- |
+   | A    | `@`       | `185.199.108.153`        | 300s | Apex → GitHub Pages              |
+   | A    | `@`       | `185.199.109.153`        | 300s | Apex → GitHub Pages              |
+   | A    | `@`       | `185.199.110.153`        | 300s | Apex → GitHub Pages              |
+   | A    | `@`       | `185.199.111.153`        | 300s | Apex → GitHub Pages              |
+   | CNAME| `www`     | `vaishnav-197.github.io` | 300s | `www` → GitHub Pages profile site|
+
+   - If you only need the apex domain, you can omit the `www` CNAME.
+   - For a different username, replace `vaishnav-197.github.io` with `USERNAME.github.io`.
+
+3. **Propagation & verification**
+   - Wait up to ~60 minutes for DNS to propagate.
+   - Verify from a terminal:
+     ```bash
+     dig fathimarahmi.com +noall +answer
+     dig www.fathimarahmi.com +noall +answer
+     ```
+
+## Vite Base Path
+
+- `vite.config.js` sets `base: '/'` so assets resolve correctly on the custom domain.
+- No further path adjustments are needed.
 
 ## Local Development
 
-For local development, use:
 ```bash
 npm run dev
 ```
 
-The app will run at `http://localhost:5173`
+Site runs at `http://localhost:5173`.
 
-## Production Build
+## Production Preview
 
-To test the production build locally:
 ```bash
 npm run build
 npm run preview
 ```
+
+Serves the optimized bundle locally for spot checks.
 
